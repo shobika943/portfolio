@@ -27,9 +27,9 @@ function Hero() {
             👋 Hello, I'm
           </p>
 
-          <h1 className="text-6xl md:text-7xl font-extrabold mb-6">
-            Shobika
-          </h1>
+          <h1 className="text-6xl md:text-7xl font-extrabold mt-8 mb-6">
+  Shobika M
+</h1>
 
           <TypeAnimation
             sequence={[
