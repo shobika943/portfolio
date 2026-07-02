@@ -5,6 +5,17 @@ import { FaBars, FaTimes } from "react-icons/fa";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const scrollToSection = (id) => {
+    setMenuOpen(false);
+
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 150);
+  };
+
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
@@ -20,13 +31,47 @@ function Navbar() {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8 text-white font-medium">
-          <li><a href="#home" className="hover:text-cyan-400 transition">Home</a></li>
-          <li><a href="#about" className="hover:text-cyan-400 transition">About</a></li>
-          <li><a href="#skills" className="hover:text-cyan-400 transition">Skills</a></li>
-          <li><a href="#projects" className="hover:text-cyan-400 transition">Projects</a></li>
-          <li><a href="#experience" className="hover:text-cyan-400 transition">Experience</a></li>
-          <li><a href="#certifications" className="hover:text-cyan-400 transition">Certificates</a></li>
-          <li><a href="#contact" className="hover:text-cyan-400 transition">Contact</a></li>
+          <li>
+            <a href="#home" className="hover:text-cyan-400 transition">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#about" className="hover:text-cyan-400 transition">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#skills" className="hover:text-cyan-400 transition">
+              Skills
+            </a>
+          </li>
+
+          <li>
+            <a href="#projects" className="hover:text-cyan-400 transition">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="#experience" className="hover:text-cyan-400 transition">
+              Experience
+            </a>
+          </li>
+
+          <li>
+            <a href="#certifications" className="hover:text-cyan-400 transition">
+              Certificates
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact" className="hover:text-cyan-400 transition">
+              Contact
+            </a>
+          </li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -49,13 +94,70 @@ function Navbar() {
             className="md:hidden bg-slate-950 border-t border-slate-800 overflow-hidden"
           >
             <ul className="flex flex-col items-center py-6 space-y-5 text-white font-medium">
-              <li><a href="#home" onClick={() => setMenuOpen(false)} className="hover:text-cyan-400 transition">Home</a></li>
-              <li><a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-cyan-400 transition">About</a></li>
-              <li><a href="#skills" onClick={() => setMenuOpen(false)} className="hover:text-cyan-400 transition">Skills</a></li>
-              <li><a href="#projects" onClick={() => setMenuOpen(false)} className="hover:text-cyan-400 transition">Projects</a></li>
-              <li><a href="#experience" onClick={() => setMenuOpen(false)} className="hover:text-cyan-400 transition">Experience</a></li>
-              <li><a href="#certifications" onClick={() => setMenuOpen(false)} className="hover:text-cyan-400 transition">Certificates</a></li>
-              <li><a href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-cyan-400 transition">Contact</a></li>
+
+              <li>
+                <button
+                  onClick={() => scrollToSection("home")}
+                  className="hover:text-cyan-400 transition"
+                >
+                  Home
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className="hover:text-cyan-400 transition"
+                >
+                  About
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => scrollToSection("skills")}
+                  className="hover:text-cyan-400 transition"
+                >
+                  Skills
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => scrollToSection("projects")}
+                  className="hover:text-cyan-400 transition"
+                >
+                  Projects
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => scrollToSection("experience")}
+                  className="hover:text-cyan-400 transition"
+                >
+                  Experience
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => scrollToSection("certifications")}
+                  className="hover:text-cyan-400 transition"
+                >
+                  Certificates
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="hover:text-cyan-400 transition"
+                >
+                  Contact
+                </button>
+              </li>
+
             </ul>
           </motion.div>
         )}
